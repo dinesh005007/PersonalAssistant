@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 import numpy
@@ -14,14 +8,9 @@ import tensorflow
 import tflearn
 
 
-# In[2]:
-
 
 with open('intents.json',mode='r') as file:
     data=json.load(file)
-
-
-# In[3]:
 
 
 words = []
@@ -29,10 +18,6 @@ labels = []
 docs_x = []
 docs_y = []
 check = []
-
-
-# In[4]:
-
 
 for intent in data['intents']:
     for pattern in intent['patterns']:
@@ -45,33 +30,10 @@ for intent in data['intents']:
         labels.append(intent["tag"])
 
 
-# In[5]:
-
-
-check
-
-
-# In[6]:
-
-
 stemmer = LancasterStemmer()
-
-
-# In[7]:
-
-
 words = [stemmer.stem(w.lower()) for w in words if w != "?"]
 words = sorted(list(set(words)))
-
-
-# In[8]:
-
-
 labels = sorted(labels)
-
-
-# In[9]:
-
 
 training = []
 output = []
@@ -100,16 +62,8 @@ for x, doc in enumerate(docs_x):
 training = numpy.array(training)
 output = numpy.array(output)
 
-
-# In[10]:
-
-
 training = numpy.array(training)
 output = numpy.array(output)
-
-
-# In[11]:
-
 
 tensorflow.reset_default_graph()
 
@@ -119,26 +73,11 @@ net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
-
-# In[12]:
-
-
 model = tflearn.DNN(net)
-
-
-# In[13]:
-
-
 model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-
-
-# In[14]:
-
-
 model.save("./model.tfl")
 
 
-# In[15]:
 
 
 def bag_of_words(s, words):
@@ -155,8 +94,6 @@ def bag_of_words(s, words):
     return numpy.array(bag)
 
 
-# In[16]:
-
 
 def dup(inp,check):  
     value=0
@@ -169,10 +106,6 @@ def dup(inp,check):
         if i in check:
                 return 1
         return 0
-
-
-# In[23]:
-
 
 def chat():
             inp = input("You: ")
@@ -194,13 +127,8 @@ def chat():
                     print(random.choice(responses))
 
 
-# In[29]:
-
-
 chat()
 
-
-# In[ ]:
 
 
 
