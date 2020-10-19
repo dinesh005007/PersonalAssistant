@@ -1,0 +1,34 @@
+
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day","namaste","namaskar"],
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?","namaste!!"],
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+	{"tag": "education",
+         "patterns": ["what did dinesh study?", "education?", "what did dinesh study", "tell me about dinesh education","tell me about your education","give me a gist on dinesh's educational background","academics","what are your educational qualifications","what are dinesh educational qualifications","what degrees do you hold","what is your circulum"],
+         "responses": ["Dinesh has Masters in computer engineering from california state university, northridge", "He has masters in computer engineering", "Masters in Computer Engineering","Masters in Computer Engineering, specialised in data mining","He graduated with Masters in Computer Engineering in August 2020"]
+        },
+	{"tag": "skills",
+         "patterns": ["skills?", "technologies?","programming?","skills", "technologies","programming","tools?","tools","programming languages?","programming languages"],
+         "responses": ["Dinesh knows how to code in python and C. If wanna know more about him, try downloading his resume.", "He knows many things, why dont you look into his resume ", "This man has lot of skills . Cant say in a line. Have a glance at his resume.","He is Like Dynamic memory, expandable. Look into his resume if possible."]
+        },
+	{"tag": "expereience",
+         "patterns": ["job", "experience", "jobs","prior work experience","gigs","gig", "what work did dinesh do" ],
+         "responses": ["Dinesh worked as intern and research assisstant at different places.", "He amazed me with the work he did as intern and research assistant.", "He learned a lot in his intern and research assist jobs."]
+        },
+	{"tag": "projects",
+         "patterns": ["projects", "course work", "work", "learn", "hands on", "what did he do?", "what did he do at work?", "what did dinesh do at work?"],
+         "responses": ["He worked on machine learning models, and in database analysis", "machine learning and data mining", "researched about autonomus vehicles and data gathering", "collected data from different sensors and stored in data frames."]
+        },
+
+        
+   ]
+}
