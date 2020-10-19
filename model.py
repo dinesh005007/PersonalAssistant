@@ -3,7 +3,6 @@ from nltk.stem.lancaster import LancasterStemmer
 import numpy
 import random
 import json
-import pickle
 import tensorflow
 import tflearn
 
